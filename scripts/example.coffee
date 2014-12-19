@@ -12,7 +12,7 @@ module.exports = (robot) ->
   robot.hear /こんにちは/,(msg) ->
     msg.send "コンニチワ！"
 
-  robot.hear /:misobot|@misobot|misobot/, (msg) ->
+  robot.hear /:misobot|@misobot/, (msg) ->
     msg.send msg.random [
       "むずかしいこと言うなよ",
       "えっ？",
