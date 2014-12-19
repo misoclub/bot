@@ -15,6 +15,9 @@ module.exports = (robot) ->
   robot.hear /:misobot|@misobot|misobot/, (msg) ->
     msg.send msg.random [
       "むずかしいこと言うなよ",
+      "えっ？",
+      "キコエマセン",
+      "日本語むつかし",
       "おれにだって、わからないことくらいある。。。"
     ]
 
