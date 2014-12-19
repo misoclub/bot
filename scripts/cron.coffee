@@ -8,11 +8,3 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
-cronJob = require('cron').CronJob
-
-module.exports = (robot) ->
-  cronjob = new cronJob('0 0 * * * 1-5', () =>
-    envelope = room: "#general"
-    robot.send envelope, "0分だお！@all"
-  )
-  cronjob.start()

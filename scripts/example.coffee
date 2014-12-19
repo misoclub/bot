@@ -8,6 +8,8 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
+cronJob = require('cron').CronJob
+
 module.exports = (robot) ->
   robot.hear /こんにちは/,(msg) ->
     msg.send "コンニチワ！"
@@ -20,6 +22,13 @@ module.exports = (robot) ->
       "日本語むつかし",
       "おれにだって、わからないことくらいある。。。"
     ]
+
+
+  cronjob = new cronJob('0 * * * 1-5', () =>
+    envelope = room: "#general"
+    robot.send envelope, "0分だお！@all"
+  )
+  cronjob.start()
 
   # robot.hear /badger/i, (msg) ->
   #   msg.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
