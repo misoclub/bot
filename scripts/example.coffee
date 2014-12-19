@@ -12,6 +12,12 @@ module.exports = (robot) ->
   robot.hear /こんにちは/,(msg) ->
     msg.send "コンニチワ！"
 
+  robot.hear /:misobot|@misobot|misobot/, (msg) ->
+    msg.send msg.random [
+      "むずかしいこと言うなよ",
+      "おれにだって、わからないことくらいある。。。"
+    ]
+
   # robot.hear /badger/i, (msg) ->
   #   msg.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
   #
