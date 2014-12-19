@@ -21,13 +21,6 @@ module.exports = (robot) ->
       "おれにだって、わからないことくらいある。。。"
     ]
 
-
-  var CronJob = require('cron').CronJob;
-  new CronJob('* * * * * *', function(){
-      console.log('You will see this message every second');
-  }, null, true, "America/Los_Angeles");
-
-
   # robot.hear /badger/i, (msg) ->
   #   msg.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
   #
