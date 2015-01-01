@@ -20,7 +20,7 @@ module.exports = (robot) ->
       "日本語むつかし",
       "おれにだって、わからないことくらいある。。。"
     ]
-    
+
   robot.hear /おみくじ/, (msg) ->
     msg.send msg.random [
         "超吉デス！！！今年一年無敵です",
