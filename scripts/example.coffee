@@ -12,8 +12,9 @@ module.exports = (robot) ->
   robot.hear /こんにちは/,(msg) ->
     msg.send "コンニチワ！"
 
-  robot.hear /女の子/,(msg) ->
-    msg.send "大好き"
+  robot.hear /(女の子|女性|若い子|美人)/i,(msg) ->
+    name=msg.match[1]
+    msg.send "#{name}大好き"
 
 #  robot.hear /:misobot|@misobot/, (msg) ->
 #    msg.send msg.random [
