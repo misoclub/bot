@@ -45,16 +45,16 @@ module.exports = (robot) ->
 
   # カード一覧。
   cards = {
-    "攻撃系":
+    "攻撃系　":
       "num": 1
       "list": ["攻撃系1", "攻撃系2", "攻撃系3", "攻撃系4"]
-    "交渉系":
+    "交渉系　":
       "num": 1
       "list": ["交渉系1", "交渉系2", "交渉系3", "交渉系4"]
-    "変換系":
+    "変換系　":
       "num": 1
       "list": ["変換系1", "変換系2", "変換系3", "変換系4"]
-    "防衛系":
+    "防衛系　":
       "num": 1
       "list": ["防衛系1", "防衛系2", "防衛系3", "防衛系4"]
     "大得点系":
@@ -78,7 +78,7 @@ module.exports = (robot) ->
     return
 
   # エイジオブクラフトで遊ぶための準備。
-  robot.respond /test/i, (msg) ->
+  robot.respond /エイジオブクラフト|AGE of CRAFT|AGEofCRAFT/i, (msg) ->
     for key, value of cards
       shuffle value["list"]
       num=value["num"]
