@@ -78,7 +78,7 @@ module.exports = (robot) ->
     return
 
   # エイジオブクラフトで遊ぶための準備。
-  robot.respond /エイジオブクラフト|AGE of CRAFT|AGEofCRAFT/i, (msg) ->
+  robot.respond /(エイジオブクラフト|AGE of CRAFT|AGEofCRAFT).*/i, (msg) ->
     for key, value of cards
       shuffle value["list"]
       num=value["num"]
