@@ -53,8 +53,21 @@ module.exports = (robot) ->
     "その他系": ["その他系1", "その他系2", "その他系3", "その他系4"]
   }
 
+  # arrayをシャッフルする関数
+  shuffle = (array) ->
+    i = array.length
+    if i is 0 then return false
+    while --i
+      j = Math.floor Math.random() * (i + 1)
+      tmpi = array[i]
+      tmpj = array[j]
+      array[i] = tmpj
+      array[j] = tmpi
+    return
+
   robot.respond /test/i, (msg) ->
     for key, value of cards
+      shuffle value
       msg.send "#{key}: #{value}"
 
   # robot.hear /badger/i, (msg) ->
