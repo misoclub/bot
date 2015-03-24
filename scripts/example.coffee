@@ -81,6 +81,9 @@ module.exports = (robot) ->
   robot.respond /test/i, (msg) ->
     for key, value of cards
       shuffle value["list"]
+      msg.send "#{key}: #{value}"
+      num=value["num"]
+      msg.send "num->#{num}"
       for i in value["num"]
         msg.send "#{key}: #{value}"
     msg.send "ってな感じで遊んでミテネ！！"
