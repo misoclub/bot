@@ -82,10 +82,11 @@ module.exports = (robot) ->
     for key, value of cards
       shuffle value["list"]
       num=value["num"]
-      msg.send "#{key}"
-      for i in [0..num]
+      output="#{key}"
+      for i in [0..num-1]
         card=value["list"][i]
-        msg.send "#{card}"
+        output+="#{card}"
+      msg.send "#{output}"
     msg.send "ってな感じで遊んでミテネ！！"
 
   # robot.hear /badger/i, (msg) ->
